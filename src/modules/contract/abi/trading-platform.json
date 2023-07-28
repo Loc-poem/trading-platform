@@ -1,0 +1,554 @@
+{
+	"compiler": {
+		"version": "0.8.18+commit.87f61d96"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address[]",
+						"name": "tokens",
+						"type": "address[]"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "recipient",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256[]",
+						"name": "amount",
+						"type": "uint256[]"
+					}
+				],
+				"name": "EmergencyWithdrawn",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint8",
+						"name": "version",
+						"type": "uint8"
+					}
+				],
+				"name": "Initialized",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "bytes",
+						"name": "_id",
+						"type": "bytes"
+					}
+				],
+				"name": "OrderCanceled",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "bytes",
+						"name": "_id",
+						"type": "bytes"
+					}
+				],
+				"name": "OrderCreated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "previousOwner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "OwnershipTransferred",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "bytes",
+						"name": "_id",
+						"type": "bytes"
+					}
+				],
+				"name": "Withdrawn",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "token",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "recipient",
+						"type": "address"
+					},
+					{
+						"internalType": "bytes",
+						"name": "userId",
+						"type": "bytes"
+					},
+					{
+						"internalType": "bytes",
+						"name": "_id",
+						"type": "bytes"
+					},
+					{
+						"internalType": "bytes",
+						"name": "signature",
+						"type": "bytes"
+					}
+				],
+				"name": "cancelSellOrder",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "token",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes",
+						"name": "_id",
+						"type": "bytes"
+					},
+					{
+						"internalType": "bytes",
+						"name": "signature",
+						"type": "bytes"
+					}
+				],
+				"name": "createSellOrder",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address[]",
+						"name": "tokens",
+						"type": "address[]"
+					}
+				],
+				"name": "emergencyWithdraw",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes",
+						"name": "userId",
+						"type": "bytes"
+					}
+				],
+				"name": "getNonce",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getSigner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes",
+						"name": "signature",
+						"type": "bytes"
+					}
+				],
+				"name": "isValidOrder",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "renounceOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "newSigner",
+						"type": "address"
+					}
+				],
+				"name": "setSigner",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "transferOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address[]",
+						"name": "tokens",
+						"type": "address[]"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "amounts",
+						"type": "uint256[]"
+					},
+					{
+						"internalType": "address",
+						"name": "recipient",
+						"type": "address"
+					},
+					{
+						"internalType": "bytes",
+						"name": "userId",
+						"type": "bytes"
+					},
+					{
+						"internalType": "bytes",
+						"name": "_id",
+						"type": "bytes"
+					},
+					{
+						"internalType": "bytes",
+						"name": "signature",
+						"type": "bytes"
+					}
+				],
+				"name": "withdraw",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"events": {
+				"Initialized(uint8)": {
+					"details": "Triggered when the contract has been initialized or reinitialized."
+				}
+			},
+			"kind": "dev",
+			"methods": {
+				"cancelSellOrder(address,uint256,address,bytes,bytes,bytes)": {
+					"details": "Cancel sell order.",
+					"params": {
+						"_id": "The internal id of sell order.",
+						"amount": "The amount of token to be withdrawn back.",
+						"recipient": "The address of recipient ",
+						"signature": "the signature of the sell order.",
+						"token": "The address of token to be canceled.",
+						"userId": "The internal id of the user"
+					}
+				},
+				"createSellOrder(address,uint256,bytes,bytes)": {
+					"details": "Create a sell order for a token.",
+					"params": {
+						"_id": "The internal id of the sale order.",
+						"amount": "The amount of the token to sell in this order.",
+						"signature": "The signature of transfer data. note: createSellOrder transfers token from `msg.sender` to this contract. ",
+						"token": "The address of the token to sell."
+					}
+				},
+				"owner()": {
+					"details": "Returns the address of the current owner."
+				},
+				"renounceOwnership()": {
+					"details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby disabling any functionality that is only available to the owner."
+				},
+				"transferOwnership(address)": {
+					"details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+				},
+				"withdraw(address[],uint256[],address,bytes,bytes,bytes)": {
+					"details": "Withdraw one or multiple tokens at once.",
+					"params": {
+						"_id": "The internal id of withdraw.",
+						"amounts": "Amounts of each token to be withdrawn",
+						"recipient": "The address of recipient.",
+						"signature": "The signature of withdraw.",
+						"tokens": "List of tokens to be withdrawn",
+						"userId": "The internal id of user."
+					}
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/Swap2Cash.sol": "Swap2Cash"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"@openzeppelin/contracts-upgradeable/interfaces/IERC20Upgradeable.sol": {
+			"keccak256": "0xe73087c5001a37cf7186b3709377c7ceb01a0d38fb908723d1464cea66b4958c",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://b835a1929ca2c7c978085e58f08f48855df8a82ef6a426ac71393cf032ea0fc5",
+				"dweb:/ipfs/QmUMXRN9g8u9wm63wc7PMaSs7oG2nqnM1VVvktaWkvF68v"
+			]
+		},
+		"@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol": {
+			"keccak256": "0x89be10e757d242e9b18d5a32c9fbe2019f6d63052bbe46397a430a1d60d7f794",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://f103ee2e4aecd37aac6ceefe670709cdd7613dee25fa2d4d9feaf7fc0aaa155e",
+				"dweb:/ipfs/QmRiNZLoJk5k3HPMYGPGjZFd2ke1ZxjhJZkM45Ec9GH9hv"
+			]
+		},
+		"@openzeppelin/contracts-upgradeable/security/ReentrancyGuardUpgradeable.sol": {
+			"keccak256": "0xb82ef33f43b6b96109687d91b39c94573fdccaaa423fe28e8ba0977b31c023e0",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://ec9c629f63e66379f9c868a74f971064701cc6e30583872aa653f8b932518025",
+				"dweb:/ipfs/QmY4MnZF2VMFwJkAwpdQwxEWA3KcGbNBKEmAVYePMVQWUR"
+			]
+		},
+		"@openzeppelin/contracts-upgradeable/token/ERC20/IERC20Upgradeable.sol": {
+			"keccak256": "0x0e1f0f5f62f67a881cd1a9597acbc0a5e4071f3c2c10449a183b922ae7272e3f",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://c25f742ff154998d19a669e2508c3597b363e123ce9144cd0fcf6521229f401f",
+				"dweb:/ipfs/QmQXRuFzStEWqeEPbhQU6cAg9PaSowxJVo4PDKyRod7dco"
+			]
+		},
+		"@openzeppelin/contracts-upgradeable/token/ERC20/extensions/IERC20PermitUpgradeable.sol": {
+			"keccak256": "0xd60f939a3ca0199014d079b4dd66aa757954334947d81eb5c1d35d7a83061ab3",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://ce6e5ae4633559c2aad156be884a96f7a9beb8dd31b1b630a6de55972e3af622",
+				"dweb:/ipfs/QmQasz4sQoexkrvB7wCQAY6NbMoCtPS7AqomymRoJGYz85"
+			]
+		},
+		"@openzeppelin/contracts-upgradeable/token/ERC20/utils/SafeERC20Upgradeable.sol": {
+			"keccak256": "0x4dae161227d332808312ee2caf6384929321b83c16cc89b5642985fbec6b814c",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://42e226467674f856e38311d37c03598e19a0dbae3f4e970ec1eb853c7b9a87d8",
+				"dweb:/ipfs/QmZ4FWqZYKMjgnxBEjVJ5Qszuh7mZoE6GYqkimEzj8qtVe"
+			]
+		},
+		"@openzeppelin/contracts-upgradeable/utils/AddressUpgradeable.sol": {
+			"keccak256": "0x9c80f545915582e63fe206c6ce27cbe85a86fc10b9cd2a0e8c9488fb7c2ee422",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://310136ad60820af4177a11a61d77a3686faf5fca4942b600e08fc940db38396b",
+				"dweb:/ipfs/QmbCzMNSTL7Zi7M4UCSqBrkHtp4jjxUnGbkneCZKdR1qeq"
+			]
+		},
+		"@openzeppelin/contracts/access/Ownable.sol": {
+			"keccak256": "0xba43b97fba0d32eb4254f6a5a297b39a19a247082a02d6e69349e071e2946218",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://fc980984badf3984b6303b377711220e067722bbd6a135b24669ff5069ef9f32",
+				"dweb:/ipfs/QmPHXMSXj99XjSVM21YsY6aNtLLjLVXDbyN76J5HQYvvrz"
+			]
+		},
+		"@openzeppelin/contracts/utils/Context.sol": {
+			"keccak256": "0xe2e337e6dde9ef6b680e07338c493ebea1b5fd09b43424112868e9cc1706bca7",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6df0ddf21ce9f58271bdfaa85cde98b200ef242a05a3f85c2bc10a8294800a92",
+				"dweb:/ipfs/QmRK2Y5Yc6BK7tGKkgsgn3aJEQGi5aakeSPZvS65PV8Xp3"
+			]
+		},
+		"@openzeppelin/contracts/utils/Strings.sol": {
+			"keccak256": "0x3088eb2868e8d13d89d16670b5f8612c4ab9ff8956272837d8e90106c59c14a0",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://b81d9ff6559ea5c47fc573e17ece6d9ba5d6839e213e6ebc3b4c5c8fe4199d7f",
+				"dweb:/ipfs/QmPCW1bFisUzJkyjroY3yipwfism9RRCigCcK1hbXtVM8n"
+			]
+		},
+		"@openzeppelin/contracts/utils/cryptography/ECDSA.sol": {
+			"keccak256": "0x809bc3edb4bcbef8263fa616c1b60ee0004b50a8a1bfa164d8f57fd31f520c58",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://8b93a1e39a4a19eba1600b92c96f435442db88cac91e315c8291547a2a7bcfe2",
+				"dweb:/ipfs/QmTm34KVe6uZBZwq8dZDNWwPcm24qBJdxqL3rPxBJ4LrMv"
+			]
+		},
+		"@openzeppelin/contracts/utils/math/Math.sol": {
+			"keccak256": "0xe4455ac1eb7fc497bb7402579e7b4d64d928b846fce7d2b6fde06d366f21c2b3",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://cc8841b3cd48ad125e2f46323c8bad3aa0e88e399ec62acb9e57efa7e7c8058c",
+				"dweb:/ipfs/QmSqE4mXHA2BXW58deDbXE8MTcsL5JSKNDbm23sVQxRLPS"
+			]
+		},
+		"@openzeppelin/contracts/utils/math/SignedMath.sol": {
+			"keccak256": "0xf92515413956f529d95977adc9b0567d583c6203fc31ab1c23824c35187e3ddc",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://c50fcc459e49a9858b6d8ad5f911295cb7c9ab57567845a250bf0153f84a95c7",
+				"dweb:/ipfs/QmcEW85JRzvDkQggxiBBLVAasXWdkhEysqypj9EaB6H2g6"
+			]
+		},
+		"contracts/Swap2Cash.sol": {
+			"keccak256": "0xa5651cd4ffd946c9d6bb69a3a66623b272e8cf816dddbaf6ad062fe1cbf94ba9",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://8e37a0528ad6f81895fd2ad299f7c0f75aba998a5ba695153735383080ede9f6",
+				"dweb:/ipfs/QmRrE44LYan5vU1B1BduPYpGmM9Q2D1CP64V2PnUw9YeDZ"
+			]
+		},
+		"contracts/common/Events.sol": {
+			"keccak256": "0x2fc48f6747e35b5a615188d740883107e15adca811e857b4a52d1076a4004d18",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://53a67a191b6fb5e6fe04c5df0337ebf3b22e0c8608905ee0b8389a5399ae1a3a",
+				"dweb:/ipfs/QmVHwVKgJZxiNK4Ks8oqcv13Seuka5khZenCprgomewpdy"
+			]
+		},
+		"contracts/entities/CancelOrder.sol": {
+			"keccak256": "0x98fbe922328ca5b2358a275f4d0402217e400a5aa8beac46ac252e9e1903ffe3",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://7d4f34d350527dea0613d8224204968b7a745aee54453285c8f72f5e2953a012",
+				"dweb:/ipfs/QmWHzvCZEKL9q522mH3gV1ytzhkXxjihVgzP3SfbY5V3bX"
+			]
+		},
+		"contracts/entities/CreateOrder.sol": {
+			"keccak256": "0xb461e9abf42de93dd6e405050fbb014145d064b05c5c2ef292321df1429a504d",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://0448aaff550ecb5fc92ab4e595e697250137fad430c18be3e0166e89be8e2841",
+				"dweb:/ipfs/QmT7v1KtWitfF3J344dSxwWTUNfgGDNycjvWA1seti2XuG"
+			]
+		},
+		"contracts/entities/Entities.sol": {
+			"keccak256": "0x92edb0a1b15a87c3cdc5522c0c0d6e938d758982449229c597ce7ef8a72c31ed",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://b8f3118842d4ec505ca7aa278cc804314fa94198641d1c4f139250f7c448e6a9",
+				"dweb:/ipfs/QmYSoNiEDqzhyAYrqPBXshKSWrjbxFN48mj8ZAm5USfQgH"
+			]
+		},
+		"contracts/entities/Withdraw.sol": {
+			"keccak256": "0xfdfbf68b9ff5412f829fb67932f3d1d132fcbecf94d76b02b43214bb34ad4c5f",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://b7eed47fe9e41b52795951b4d93e4c9a297679dcca56ce80b4d23b967987253a",
+				"dweb:/ipfs/Qmd1AhNyLmT6x3KowZ1dk919BtPdV1Yy5DjDKwdJHv4a5r"
+			]
+		},
+		"contracts/utils/Transfer.sol": {
+			"keccak256": "0x39470949d8e97138a2e108ac9404dc4b334491de0023805a8aa923748a4f0709",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://1af99fcd64733058fa7fe549343c947832e1bbf88cf07d27d85d74d32f824b7d",
+				"dweb:/ipfs/QmX8BnmDzfYaE2CxK9KoKaeStYJWxuFdhkfL38VFWGaQSn"
+			]
+		}
+	},
+	"version": 1
+}

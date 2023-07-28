@@ -188,6 +188,8 @@ export class ApiConfigService {
       ethProvider: this.getString('ETH_PROVIDER'),
       polygonChainId: this.getString('PO_CHAIN_ID'),
       poProvider: this.getString('PO_PROVIDER'),
+      cvcChainId: this.getString('CVC_CHAIN_ID'),
+      cvcProvider: this.getString('CVC_PROVIDER'),
     };
   }
 

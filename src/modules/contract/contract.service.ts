@@ -14,7 +14,7 @@ export class ContractService {
   private readonly contractAbiPath: string;
 
   constructor(private readonly apiConfigService: ApiConfigService) {
-    this.contractAbiPath = './abi/Swap2Cash.json';
+    this.contractAbiPath = './abi/trading-platform.json';
     this.tokenAbiPath = './abi/MyToken.json';
   }
 

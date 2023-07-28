@@ -188,6 +188,8 @@ export class Web3Util {
         return apiConfigService.chainIdConfig.ethProvider;
       case apiConfigService.chainIdConfig.polygonChainId:
         return apiConfigService.chainIdConfig.poProvider;
+      case apiConfigService.chainIdConfig.cvcChainId:
+        return apiConfigService.chainIdConfig.cvcChainId;
       default:
         return '';
     }
