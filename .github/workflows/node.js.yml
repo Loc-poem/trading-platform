@@ -1,0 +1,39 @@
+name: NodeJS with Webpack
+
+on:
+  push:
+    branches: [ "develop" ]
+  pull_request:
+    branches: [ "develop" ]
+
+jobs:
+  build:
+    runs-on: self-hosted
+
+    strategy:
+      matrix:
+        node-version: [16.18.0]
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+
+    - name: Install
+      run: |
+        yarn install
+    
+    - name: migration
+      run: |
+        yarn migration:run
+      
+    - name: Build
+      run: | 
+        yarn run build:prod
+        
+    - name: Deploy
+      run: |
+        pm2 restart 0
